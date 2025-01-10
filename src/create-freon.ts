@@ -3,7 +3,7 @@
  * This project creates a new Freon project for a language selected by the user.
  * This is done through the command: `npm create freon`
  */
-import { intro, note, select, tasks } from "@clack/prompts";
+import { intro, note, select, tasks, text } from "@clack/prompts";
 import { execSync } from "node:child_process";
 import { getAvailableLanguages } from "./GitRequests.js";
 
@@ -25,8 +25,13 @@ await execSync(`cd ./${languageName} && npm pkg set name=${languageName}`, {stdi
 // Insert language specific files
 const langRepo = `https://github.com/freon4dsl/create-freon-languages/languages/${languageName}`
 await execSync(`npx degit ${langRepo}/src/defs/ ./${languageName}/src/defs`, {stdio: "inherit"})
+text({ message: "done defs" })
 await execSync(`npx degit ${langRepo}/src/external/ ./${languageName}/src/external --force`, {stdio: "inherit"})
+text({ message: "done externals" })
 await execSync(`npx degit ${langRepo}/src/freon/ ./${languageName}/src/freon --force`, {stdio: "inherit"})
+text({ message: "done freon" })
+await execSync(`npx degit ${langRepo}/modelstore/ ./${languageName}/modelstore --force`, {stdio: "inherit"})
+text({ message: "done modelstore" })
 
 async function installAndBuild() {
     // install deps
