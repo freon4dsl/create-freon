@@ -3,10 +3,10 @@ import { Octokit } from "octokit";
 export async function getAvailableLanguages(): Promise<string[]> {
 // Get all folders under package "samples" in Freon4Dsl repo
     const octokit = new Octokit()
-    const result = await octokit.request('GET /repos/freon4dsl/Freon4Dsl/contents/packages/samples?ref=diagrams', {
+    const result = await octokit.request('GET /repos/freon4dsl/create-freon-languages/contents/languages', { // ?ref=diagrams for branch
         owner: 'freon4dsl',
-        repo: 'Freon4Dsl',
-        path: '/repos/freon4dsl/Freon4Dsl/contents/packages/samples',
+        repo: 'create-freon-languages',
+        path: '/repos/freon4dsl/create-freon-languages/contents/languages',
         headers: {
             'X-GitHub-Api-Version': '2022-11-28'
         }
