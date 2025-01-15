@@ -25,13 +25,13 @@ await execSync(`cd ./${languageName} && npm pkg set name=${languageName}`, {stdi
 // Insert language specific files
 const langRepo = `https://github.com/freon4dsl/create-freon-languages/languages/${languageName}`
 await execSync(`npx degit ${langRepo}/src/defs/ ./${languageName}/src/defs`, {stdio: "inherit"})
-text({ message: "done defs" })
+text({ message: "done installing language definition files in src/defs" })
 await execSync(`npx degit ${langRepo}/src/external/ ./${languageName}/src/external --force`, {stdio: "inherit"})
-text({ message: "done externals" })
-await execSync(`npx degit ${langRepo}/src/freon/ ./${languageName}/src/freon --force`, {stdio: "inherit"})
-text({ message: "done freon" })
+text({ message: "done installing external Svelte components in src/externals" })
+await execSync(`npx degit ${langRepo}/src/custom/ ./${languageName}/src/freon --force`, {stdio: "inherit"})
+text({ message: "done installing custom Freon code in src/freon" })
 await execSync(`npx degit ${langRepo}/modelstore/ ./${languageName}/modelstore --force`, {stdio: "inherit"})
-text({ message: "done modelstore" })
+text({ message: "done installing example models in modelstore" })
 
 async function installAndBuild() {
     // install deps
