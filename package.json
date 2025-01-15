@@ -1,6 +1,6 @@
 {
   "name": "create-freon",
-  "version": "0.1.13",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
   "type": "module",
