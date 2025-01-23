@@ -30,6 +30,8 @@ await execSync(`npx degit ${langRepo}/src/external/ ./${languageName}/src/extern
 text({ message: "done installing external Svelte components in src/externals" })
 await execSync(`npx degit ${langRepo}/src/custom/ ./${languageName}/src/freon --force`, {stdio: "inherit"})
 text({ message: "done installing custom Freon code in src/freon" })
+await execSync(`npx degit ${langRepo}/extra/ ./${languageName}/extra --force`, {stdio: "inherit"})
+text({ message: "done installing extra files in extra" })
 await execSync(`npx degit ${langRepo}/modelstore/ ./${languageName}/modelstore --force`, {stdio: "inherit"})
 text({ message: "done installing example models in modelstore" })
 
@@ -39,7 +41,7 @@ async function installAndBuild() {
         {
             title: 'Installing via npm',
             task: async (message: (string: string) => void) => {
-                await execSync(`cd ${languageName} && npm run install-local`, {stdio: "inherit"});
+                await execSync(`cd ${languageName} && npm install`, {stdio: "inherit"});
                 return 'Installed via npm';
             },
         },
