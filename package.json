@@ -1,6 +1,6 @@
 {
   "name": "create-freon",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "type": "module",
@@ -14,7 +14,7 @@
 
   },
   "bin": {
-    "create-freon": "dist/create-freon.js"
+    "create-freon":  "./bin/create-freon.js"
   },
   "dependencies": {
     "@octokit/types": "13.6.2",
