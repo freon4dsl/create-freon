@@ -33,7 +33,7 @@ export async function createFreon() {
     execSync(`npx degit https://github.com/freon4dsl/create-freon-template ./${languageName}`, { stdio: "inherit" })
 // await execSync(`npx degit https://github.com/freon4dsl/create-freon-template#1.0.0-beta1 ./${languageName}`, {stdio: "inherit"})
 // Change the name of the local project
-    execSync(`cd ./${languageName} && npm pkg set name=${languageName}`, { stdio: "inherit" })
+    execSync(`cd ./${languageName} && npm pkg set name=${languageName.toLowerCase()}`, { stdio: "inherit" })
 // Insert language specific files
     const langRepo = `https://github.com/freon4dsl/create-freon-languages/languages/${languageName}`
     execSync(`npx degit ${langRepo}/src/defs/ ./${languageName}/src/defs --force`, { stdio: "inherit" })
