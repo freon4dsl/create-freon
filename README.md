@@ -30,10 +30,16 @@ Follow the prompts, then:
 
 ```bash
 cd my-language
-npm install
-npm run build
+npm run prepare-app (only needed once)
 npm run dev
 ```
+
+Because the above starts a webserver, you need to open a second terminal and start the model server as well:
+
+```bash
+`npm run server`    
+```           
+                          
 
 ➡️ Open your browser at the URL shown (typically `http://localhost:5173/`) to try out your new DSL editor.
 
