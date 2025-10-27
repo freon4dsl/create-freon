@@ -44,7 +44,7 @@ export async function createFreon() {
     }
     Prompts.note(`Creating project for language ${languageName}`, "Freon")
 
-    const branch = "#release-2.0.0-beta.2"
+    const branch = "#2.0.0"
     
     let templateLanguage = languages.includes(languageName) ? languageName : "StarterLanguage" 
 // Make a copy of the freon template project.
