@@ -30,7 +30,7 @@ Follow the prompts, then:
 
 ```bash
 cd my-language
-npm run prepare-app (only needed once)
+npm run styles (only needed once, and whenever you change CSS files)
 npm run dev
 ```
 
