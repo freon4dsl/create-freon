@@ -49,7 +49,6 @@ export async function createFreon() {
     let templateLanguage = languages.includes(languageName) ? languageName : "StarterLanguage" 
 // Make a copy of the freon template project.
     execSync(`npx degit https://github.com/freon4dsl/create-freon-template/${branch} ./${languageName}`, { stdio: "inherit" })
-// await execSync(`npx degit https://github.com/freon4dsl/create-freon-template#1.0.0-beta1 ./${languageRepo}`, {stdio: "inherit"})
 // Change the name of the local project
     execSync(`cd ./${languageName} && npm pkg set name=${languageName.toLowerCase()}`, { stdio: "inherit" })
 // Insert language specific files
