@@ -42,7 +42,7 @@ export async function createFreon() {
             languageName = symbolOrText as string
         }
     }
-    Prompts.note(`Creating project for language ${languageName}`, "Freon")
+    Prompts.note(`Creating Freon 2.0.0 project for language ${languageName}`, "Freon")
 
     const branch = "#2.0.0"
     

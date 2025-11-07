@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "release": "npm publish --tag beta",
+      "release": "npm publish --tag latest",
+      "release-beta": "npm publish --tag beta",
     "publish-local": "npm publish --registry http://localhost:4873 --tag beta",
     "unpublish-local": "npm unpublish --force --registry http://localhost:4873",
     "republish-local": "npm run unpublish-local && npm run publish-local",
