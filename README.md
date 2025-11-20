@@ -15,6 +15,7 @@ With a single command, Create Freon generates a complete project scaffold for yo
 - 🛡️ **Insurance** – a DSL for modeling insurance products
 - 🚀 **StarterLanguage** – a minimal language to get started quickly
 - 🧩 **TyperExample** – demonstrates typing rules in practice
+- **Your own language** – an empty language project
 
 ---
 
